@@ -31,14 +31,16 @@ Plug 'yggdroot/indentline'
 " Colored braces
 Plug 'kien/rainbow_parentheses.vim'
 
+" I need that color
+Plug 'flazz/vim-colorschemes'
+
 call plug#end()
 
 "folding settings
 set foldmethod=indent   "fold based on indent
 set foldnestmax=10      "deepest fold is 10 levels
 set nofoldenable        "dont fold by default
-set foldlevel=1         "this is just what i uselet g:airline_powerline_fonts = 1
-
+set foldlevel=1         "this is just what i use
 
 " Syntastic recommended settings
 set statusline+=%#warningmsg#
@@ -49,6 +51,8 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
+" Syntastic custom settings
+let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++'
 
 set background=light
 
