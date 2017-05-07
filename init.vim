@@ -4,14 +4,17 @@ call plug#begin('~/.vim/plugged')
 " vim-airline, the lean mean statusline
 Plug 'bling/vim-airline'
 
+" autocompletion for vim
+Plug 'Shougo/deoplete.nvim', {'do': ':UpdateRemotePlugins'}
+
+" linting for like all the languages
+Plug 'scrooloose/syntastic'
+
 " Quoting/paranthesizing made simple
 Plug 'tpope/vim-surround'
 
 " Commenting things
 Plug 'tpope/vim-commentary'
-
-" Trailing whitespace fixes
-Plug 'ntpeters/vim-better-whitespace'
 
 " Enhanced cpp highlighting
 Plug 'octol/vim-cpp-enhanced-highlight'
@@ -28,9 +31,6 @@ Plug 'yggdroot/indentline'
 " Colored braces
 Plug 'kien/rainbow_parentheses.vim'
 
-" Better indented pasting
-Plug 'sickill/vim-pasta'
-
 call plug#end()
 
 "folding settings
@@ -38,6 +38,17 @@ set foldmethod=indent   "fold based on indent
 set foldnestmax=10      "deepest fold is 10 levels
 set nofoldenable        "dont fold by default
 set foldlevel=1         "this is just what i uselet g:airline_powerline_fonts = 1
+
+
+" Syntastic recommended settings
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
 
 set background=light
 
