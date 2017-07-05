@@ -1,4 +1,3 @@
-" My plugins start here
 call plug#begin('~/.vim/plugged')
 
 " vim-airline, the lean mean statusline
@@ -54,18 +53,21 @@ let g:syntastic_check_on_wq = 0
 " Syntastic custom settings
 let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++'
 
-set background=light
+set background=dark
+colorscheme Tomorrow-Night
 
 set tabstop=4
 set shiftwidth=4
 
+set relativenumber
 set number
+
 imap jk <Esc>`^
 
-noremap  <buffer> <silent> k gk
-noremap  <buffer> <silent> j gj
-noremap  <buffer> <silent> 0 g0
-noremap  <buffer> <silent> $ g$
+noremap k gk
+noremap j gj
+noremap 0 g0
+noremap $ g$
 
 " This remaps arrow keys to switch between windows
 nmap <silent> <Up> :wincmd k<CR>
@@ -74,5 +76,7 @@ nmap <silent> <Left> :wincmd h<CR>
 nmap <silent> <Right> :wincmd l<CR>
 
 tnoremap <Esc> <C-\><C-n>
+
+set tildeop
 
 au BufWinEnter * :DetectIndent
