@@ -35,6 +35,8 @@ Plug 'flazz/vim-colorschemes'
 
 call plug#end()
 
+set termguicolors
+
 "folding settings
 set foldmethod=indent   "fold based on indent
 set foldnestmax=10      "deepest fold is 10 levels
