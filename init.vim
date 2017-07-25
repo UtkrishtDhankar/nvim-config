@@ -80,3 +80,4 @@ tnoremap <Esc> <C-\><C-n>
 set tildeop
 
 au BufWinEnter * :DetectIndent
+let g:deoplete#enable_at_startup = 1
